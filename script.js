@@ -30,14 +30,14 @@ function displayBooks(filteredBooks) {
     titleLink.style.display = "block"; // حتى يظهر كعنوان مستقل
     titleLink.style.fontWeight = "bold";
     titleLink.style.marginBottom = "5px";
-    titleLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (book.file) {
-        showBookContent(book.file);
-      } else {
-        alert("لا يوجد ملف لهذا الكتاب.");
-      }
-    });
+   titleLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (book.file) {
+    window.open(book.file, "_blank");
+    } else {
+    alert("لا يوجد ملف لهذا الكتاب.");
+    }
+  });
 
     // المؤلف
     const authorPara = document.createElement("p");
@@ -65,5 +65,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
   alert("Your message has been sent. Thank you!");
 });
+
 
 displayBooks(books);
